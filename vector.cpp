@@ -3,15 +3,14 @@
 #include <iostream>
 #include <vector>
 
-//template<typename T> T hop(T &i){i+=5;};
-
 #include <string>
 #include <sstream>
 unsigned int stringToValue(const std::string &s)
 //template<typename T> T stringToValue(const std::string &s)
 {
      std::istringstream stream(s);
-     int t;//T t;
+     unsigned int t;
+//     T t;
      stream >> t;
      return t;
 }
@@ -31,7 +30,7 @@ int main(int argc, char *argv[])
   unsigned int size=100000000;//hop(size);
   vector<int> myvector;
 
-  if(argc==2) {size=stringToValue(string(argv[1]));}
+  if(argc==2) {size=(int)stringToValue(string(argv[1]));}
 
   unsigned int range=4;
   if(size<2*range) size=2*range+1;
