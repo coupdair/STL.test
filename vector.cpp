@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
   unsigned int size=100000000;//hop(size);
   vector<int> myvector;
 
-  if(argc==2) {const string arg=argv[1];size=stringToValue(arg);}
+  if(argc==2) {size=stringToValue(string(argv[1]));}
 
   unsigned int range=4;
   if(size<2*range) size=2*range+1;
