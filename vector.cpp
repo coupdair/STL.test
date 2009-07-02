@@ -2,16 +2,22 @@
 //from http://www.cplusplus.com/reference/stl/vector/clear/
 #include <iostream>
 #include <vector>
+
+#include <stdio.h>
+#include <stdlib.h>
+
 using namespace std;
 
-int main ()
+int main(int argc, char *argv[])
 {
   unsigned int i;
   unsigned int size=100000000;
   vector<int> myvector;
 
+  if(argc==2) size=atoi(argv[1]);
+
   unsigned int range=4;
-  if(2*size<range) size=2*range+1;
+  if(size<2*range) size=2*range+1;
 
 //reserve
   cout << "myvector.reserve("<<size<<")"<<endl;
