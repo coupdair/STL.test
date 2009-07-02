@@ -7,7 +7,11 @@
 
 #include <string>
 #include <sstream>
-template<typename T> T stringToValue(T i)//std::string &s)
+//template<typename T> T stringToValue(std::string &s)
+
+#include <stdio.h>
+#include <stdlib.h>
+int stringToValue(const std::string &s)
 {
 /*
      std::istringstream stream(s);
@@ -15,7 +19,8 @@ template<typename T> T stringToValue(T i)//std::string &s)
      stream >> t;
      return t;
 */
-return i+=11;
+int t=atoi(s.c_str());
+return t;
 }
 /*
 template<typename T> std::string valueToString(const T& t)
@@ -33,8 +38,8 @@ int main(int argc, char *argv[])
   unsigned int size=100000000;//hop(size);
   vector<int> myvector;
 
-//  if(argc==2) {const string arg=argv[1];size=stringToValue(arg);}
-int hop=100;size=stringToValue(hop);
+  if(argc==2) {const string arg=argv[1];size=stringToValue(arg);}
+//int hop=100;size=stringToValue(hop);
 
   unsigned int range=4;
   if(size<2*range) size=2*range+1;
