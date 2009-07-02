@@ -3,18 +3,38 @@
 #include <iostream>
 #include <vector>
 
-#include <stdio.h>
-#include <stdlib.h>
+//template<typename T> T hop(T &i){i+=5;};
 
+#include <string>
+#include <sstream>
+template<typename T> T stringToValue(T i)//std::string &s)
+{
+/*
+     std::istringstream stream(s);
+     T t;
+     stream >> t;
+     return t;
+*/
+return i+=11;
+}
+/*
+template<typename T> std::string valueToString(const T& t)
+{
+     std::ostringstream stream;
+     stream << t;
+     return stream.str();
+}
+*/
 using namespace std;
 
 int main(int argc, char *argv[])
 {
   unsigned int i;
-  unsigned int size=100000000;
+  unsigned int size=100000000;//hop(size);
   vector<int> myvector;
 
-  if(argc==2) size=atoi(argv[1]);
+//  if(argc==2) {const string arg=argv[1];size=stringToValue(arg);}
+int hop=100;size=stringToValue(hop);
 
   unsigned int range=4;
   if(size<2*range) size=2*range+1;
