@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-int stringToValue(const std::string &s)
+//int stringToValue(const std::string &s)
+template<typename T> T stringToValue(std::string &s)
 {
 /*
      std::istringstream stream(s);
