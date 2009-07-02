@@ -10,28 +10,35 @@ int main ()
   unsigned int size=100000000;
   vector<int> myvector;
 
+  unsigned int range=4;
+  if(2*size<range) size=2*range+1;
+
+//reserve
   cout << "myvector.reserve("<<size<<")"<<endl;
-  cout << "myvector.reserve "<<sizeof(int)*i/1024/1024<<" MByte"<<endl;
-  myvector.reserve(i);
+  cout << "myvector.reserve "<<sizeof(int)*size/1024/1024<<" MByte"<<endl;
+  myvector.reserve(size);
   cout << "size: " << (int) myvector.size() << "\n";
   cout << "capacity: " << (int) myvector.capacity() << "\n";
   cout << "max_size: " << (int) myvector.max_size() << "\n";
 
+//push_back
   cout << "myvector.push_back() 3 times"<<endl;
   myvector.push_back (0);
   myvector.push_back (127);
   myvector.push_back (255);
 
   for (i=0; i<myvector.size(); i++) cout << " " << myvector[i];
+  cout <<endl;
   cout << "size: " << (int) myvector.size() << "\n";
   cout << "capacity: " << (int) myvector.capacity() << "\n";
   cout << "max_size: " << (int) myvector.max_size() << "\n";
 
   cout << "myvector contains:";
   for (i=0; i<myvector.size(); i++) cout << " " << myvector[i];
+  cout <<endl;
 
 //clear
-  cout <<endl<< "myvector.clear()"<<endl;
+  cout << "myvector.clear()"<<endl;
   myvector.clear();
   cout << "size: " << (int) myvector.size() << "\n";
   cout << "capacity: " << (int) myvector.capacity() << "\n";
@@ -55,9 +62,9 @@ int main ()
   cout << "capacity: " << (int) myvector.capacity() << "\n";
   cout << "max_size: " << (int) myvector.max_size() << "\n";
 
-  for (i=0; i<3; i++) cout << " " << myvector[i];
+  for (i=0; i<range; i++) cout << " " << myvector[i];
   cout <<"...";
-  for (i=myvector.size()-3;i<myvector.size(); i++) cout << " " << myvector[i];
+  for (i=myvector.size()-range;i<myvector.size(); i++) cout << " " << myvector[i];
   cout <<endl;
 
   return 0;
