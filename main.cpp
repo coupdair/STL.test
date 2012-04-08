@@ -1,7 +1,10 @@
 //main test
 //compilation line: g++ -o main main.cpp
 //run line: ./main
-//shell line: g++ -o main main.cpp && ./main && ./main 123 && ./main 123 > /dev/null
+//shell line: g++ -o main main.cpp && ./main && ./main 123
+//shell line: ./main 123 > /dev/null
+//shell line: ./main 123 2> /dev/null
+//! \todo add shell line example to know if program return 0 or 1 !
 #include <iostream>
 
 //using namespace std;
@@ -14,7 +17,8 @@ int main(int argc, char *argv[])
   //example of program stop in case of 1 command line argument set by user (e.g. ./main hop)
   if(argc==2)
   {//return not zero value to specify the error (i.e. error code value)
-    std::cerr<<"error: no argument is used by this program."<<std::endl;
+    std::cerr<<"error: no argument should be used by this program.\n"<<std::flush;
+    std::cerr<<"error: presently at least 1 has been provided (e.g. "<<argv[1]<<")."<<std::endl;
     return 1;
   }
 
