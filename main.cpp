@@ -2,9 +2,11 @@
 //compilation line: g++ -o main main.cpp
 //run line: ./main
 //shell line: g++ -o main main.cpp && ./main && ./main 123
-//shell line: ./main 123 > /dev/null
+//shell line: ./main 123  > /dev/null
 //shell line: ./main 123 2> /dev/null
-//! \todo add shell line example to know if program return 0 or 1 !
+//shell line: ./main      > /dev/null 2> /dev/null && echo "program is ok."
+//shell line: ./main 123  > /dev/null 2> /dev/null && echo "program is ok."
+//! \todo . add shell line example to know if program return 0 or 1 !
 #include <iostream>
 
 //using namespace std;
