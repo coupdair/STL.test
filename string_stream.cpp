@@ -10,17 +10,12 @@
 
 //! convert string to value
 /**
- * convert string to value
+ * convert string to value, e.g. integer to string
 **/
-//unsigned int stringToValue(const std::string &s)
-//template<typename T> T stringToValue(const std::string &s)
 template<typename T> void stringToValue(const std::string &s,T &t)
 {
   std::istringstream stream(s);
-//  unsigned int t;
-//     T t;
   stream >> t;
-//  return t;
 }//stringToValue
 
 //! convert value to string (might be fixed size with specific character fill)
@@ -57,6 +52,11 @@ int main(int argc, char *argv[])
   std::cout<<"value="<<value<<"\n"<<std::flush;
   std::cout<<"str =\""<<str<<"\"."<<std::endl;
 
+//cat
+  std::cerr<<"* cat string or char (i.e. + operator):"<<std::endl;
+  str="basename_"+str+".ext";
+  std::cout<<"str =\""<<str<<"\"."<<std::endl;
+
 //value to string
   std::cerr<<"* valueToString function:"<<std::endl;
   str=valueToString(value);
@@ -64,9 +64,14 @@ int main(int argc, char *argv[])
 
 //value to string (fill with)
   std::cerr<<"* valueToString function:"<<std::endl;
-  int zeros=10;
+  int zeros=5;
   str=valueToString(value,zeros);
   std::cerr<<"output number using "<<zeros<<" character(s) filling with 0."<<std::endl;
+  std::cout<<"str =\""<<str<<"\"."<<std::endl;
+
+//cat
+  std::cerr<<"* cat string or char (i.e. + operator):"<<std::endl;
+  str="basename_"+valueToString(value,zeros)+".ext";
   std::cout<<"str =\""<<str<<"\"."<<std::endl;
 
   return 0;
