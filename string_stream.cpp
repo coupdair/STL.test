@@ -7,14 +7,20 @@
 
 #include <string>
 #include <sstream>
-unsigned int stringToValue(const std::string &s)
+
+//! convert string to value
+/**
+ * convert string to value
+**/
+//unsigned int stringToValue(const std::string &s)
 //template<typename T> T stringToValue(const std::string &s)
+template<typename T> void stringToValue(const std::string &s,T &t)
 {
   std::istringstream stream(s);
-  unsigned int t;
+//  unsigned int t;
 //     T t;
   stream >> t;
-  return t;
+//  return t;
 }//stringToValue
 
 //! convert value to string (might be fixed size with specific character fill)
@@ -46,7 +52,7 @@ int main(int argc, char *argv[])
   {
     str=argv[1];
     std::cerr<<"* command line argument from stringToValue function:"<<std::endl;
-    value=(int)stringToValue(str);
+    stringToValue(str,value);
   }
   std::cout<<"value="<<value<<"\n"<<std::flush;
   std::cout<<"str =\""<<str<<"\"."<<std::endl;
