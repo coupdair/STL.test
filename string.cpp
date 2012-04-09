@@ -55,6 +55,9 @@ int main(int argc, char *argv[])
   for(int i=0;i<str.size();i++) std::cout<<"'"<<str[i]<<"' ";
   std::cout<<std::endl;
 
+//C++ to C path .c_str()
+//! \todo x sprintf, any other ?
+
 //clear
   std::cerr<<"* clear function:"<<std::endl;
   std::cout << "str.clear()"<<std::endl;
