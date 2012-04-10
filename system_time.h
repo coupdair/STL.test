@@ -7,6 +7,8 @@
 //! \todo option: use POSIX
 //! \todo option: use boost::
 //! \todo option: use mpi::
+//! \todo option: use cimg::
+
 //! mesure elapse time in code programs
 /**
  * 

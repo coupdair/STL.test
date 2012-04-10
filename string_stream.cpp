@@ -27,9 +27,7 @@ template<typename T> std::string valueToString(const T& value,int size=-1,char c
   std::ostringstream stream;
   if(size>0)
   {
-    //stream.reserve(zeros);
-//stream<<"0123456879";
-stream<<"0000000000";
+    stream.width(size);
     stream.fill(c);
   }
   stream << value;
