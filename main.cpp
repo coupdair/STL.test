@@ -6,7 +6,10 @@
 //shell line: ./main 123 2> /dev/null
 //shell line: ./main      > /dev/null 2> /dev/null && echo "program is ok."
 //shell line: ./main 123  > /dev/null 2> /dev/null && echo "program is ok."
-//! \todo . add shell line example to know if program return 0 or 1 !
+//shell line: ./main; echo "program return "$?
+//shell line: ./main 123; if(($?==0)); then echo "program is ok."; else echo "program is KO."; fi
+//shell line: ./main; val=$?; /bin/echo -n "program is "; if((val==0)); then echo "ok."; else echo "KO."; fi
+
 #include <iostream>
 
 //using namespace std;
