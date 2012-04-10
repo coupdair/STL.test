@@ -1,8 +1,8 @@
 //STL::sstream test
 //compilation line: g++ -o string_stream string_stream.cpp
 //run line: ./string_stream
-//run line: ./string_stream 12345
-//shell line: g++ -o string_stream string_stream.cpp && ./string_stream && ./string_stream 12345
+//run line: ./string_stream 1234
+//shell line: g++ -o string_stream string_stream.cpp && ./string_stream && ./string_stream 12345 && ./string_stream 12345 10
 #include <iostream>
 
 #include <string>
@@ -41,10 +41,11 @@ int main(int argc, char *argv[])
 //string to value
   int value=123;
   std::string str("default");
-  if(argc==2)
-  {
+  if(argc>1)
+  {//get first argument on command line
     str=argv[1];
     std::cerr<<"* command line argument from stringToValue function:"<<std::endl;
+    std::cerr<<"  first command line argument (i.e. \""<<str<<"\") used."<<std::endl;
     stringToValue(str,value);
   }
   std::cout<<"value="<<value<<"\n"<<std::flush;
@@ -63,6 +64,13 @@ int main(int argc, char *argv[])
 //value to string (fill with)
   std::cerr<<"* valueToString function:"<<std::endl;
   int zeros=5;
+  if(argc==3)
+  {//get second argument on command line
+    str=argv[2];
+    std::cerr<<"* command line argument from stringToValue function:"<<std::endl;
+    std::cerr<<"  second command line argument (i.e. \""<<str<<"\") used."<<std::endl;
+    stringToValue(str,zeros);
+  }
   str=valueToString(value,zeros);
   std::cerr<<"output number using "<<zeros<<" character(s) filling with 0."<<std::endl;
   std::cout<<"str =\""<<str<<"\"."<<std::endl;
