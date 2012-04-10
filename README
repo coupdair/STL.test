@@ -1,0 +1,21 @@
+STL.test
+small C++ code samples to test the STL library (Standard Template Library).
+It could be used as a tutorial or draft developing branch.
+
+The following files refers to the corresponding C++ key words:
+* C++
+** main: argc, argv, return
+** case: switch case
+** sinus: function,template
+** time: class
+
+* string
+** string: std::string
+** string_stream: std::stringstream
+
+* STL
+** vector: std::vector<int>
+
+TODO:
+* Makefile
+
