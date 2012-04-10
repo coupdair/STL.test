@@ -1,15 +1,17 @@
 //case test
+//compilation: g++ -o case case.cpp
+//run line: ./case
+//run line: ./case 10
+//shell line: g++ -o case case.cpp && ./case && ./case 11 && ./case 123
 #include <iostream>
 #include <vector>
 
 #include <string>
 #include <sstream>
 unsigned int stringToValue(const std::string &s)
-//template<typename T> T stringToValue(const std::string &s)
 {
      std::istringstream stream(s);
      unsigned int t;
-//     T t;
      stream >> t;
      return t;
 }
@@ -45,7 +47,8 @@ int main(int argc, char *argv[])
     } break;
     default:
     {
-      cerr<<"case DEFAULT";
+      cerr<<"case DEFAULT\n";
+      return 1;
     } break;
   }
   cout<<"\n";
