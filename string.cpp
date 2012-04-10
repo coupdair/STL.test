@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 
 //push_back
   std::cerr<<"* push_back function:"<<std::endl;
-  for(int i=0;i<5; i++) str.push_back('0'+i);
+  for(int i=0;i<5; i++) str.push_back('0'+i);//note: to format a number use stringstream (see string_stream.cpp)
   std::cout<<"str =\""<<str<<"\"."<<std::endl;
 
 //char
