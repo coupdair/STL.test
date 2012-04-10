@@ -7,7 +7,9 @@
 
 //using namespace std;
 
-#define SINUS value=value-value*value*value/6.0
+//Polynomial approximation
+//sin(x) = x - 1/6 x^3 + 1/120 x^5 - 1/5040 x^7
+#define SINUS value=value-value*value*value/6.0+value*value*value*value*value/120.0
 
 //procedure
 void sinus_reference(float &value)
@@ -39,14 +41,14 @@ int main(int argc, char *argv[])
   std::cout<<"value="<<value<<std::endl;
 
   //put sinus of value to standard output
-  std::cout<<"sin("<<value<<")="<<sin(value)<<std::endl;
+  std::cout<<"sin("<<value<<")="<<sin(value)<<"\n\n";
 
   //put sinus of value to standard output
-  std::cout<<"sinus("<<value<<")="<<sinus(value)<<std::endl;
+  std::cout<<"sinus("<<value<<")="<<sinus(value)<<"\n\n";
 
   //put sinus of value to standard output
   sinus_copy(value);
-  std::cout<<"value="<<value<<std::endl;
+  std::cout<<"value="<<value<<"\n\n";
 
   //put sinus of value to standard output
   sinus_reference(value);
